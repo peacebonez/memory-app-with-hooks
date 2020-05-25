@@ -1,38 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Indie Flower", cursive;
+}
+
+body {
+  /* background-image: url("https://cdn.inspirationhut.net/wp-content/uploads/2013/05/101.png"); */
+  background-image: url("https://images.hdqwalls.com/wallpapers/forest-birds-mountains-vaporwave-minimalism-tg.jpg");
+  background-position: center;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* HEADING */
+
+.heading {
+  margin-top: -3vh;
+  /* pointer-events: ; */
+}
+
+.heading h1 {
+  font-size: 3vw;
+  margin-top: 6vh;
+  color: #fff;
+}
+
+.scoreboard {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: -3vw;
 }
 
-.App-link {
-  color: #61dafb;
+.scoreboard h4 {
+  font-size: 2vw;
+  padding: 0 2vw;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.scoreboard button {
+  color: #fff;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.2s;
+}
+
+.scoreboard button:hover {
+  color: #feef48;
+}
+
+.scoreboard button:active {
+  color: #000;
+}
+
+/* GAMEBOARD */
+
+.gameboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1vw;
+  width: 50vw;
+  height: 75vh;
+  margin-top: -3vh;
+  box-shadow: 2px 2px 5px gray;
+  border-radius: 18px;
+  background-image: linear-gradient(145deg, #feef48, #e3229d);
+}
+
+.card {
+  display: flex;
+  flex: 19%;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  margin: 1vw;
+
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px gray;
+  background: #444;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(0.1vw);
+}
+
+.flip-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+.flipper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flipped {
+}
+
+.front,
+.back {
+  backface-visibility: none;
+}
+
+.back {
+  z-index: 2;
+}
+
+.front {
+  transform: rotateY(180deg);
+}
+
+.card img {
+}
+
+.gameover {
+  background-image: linear-gradient(145deg, #f9a6ff, #6bffff);
+
+  padding: 1vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s;
+}
+
+.gameover h1 {
+  color: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+  .heading h1 {
+    font-size: 5vw;
   }
-  to {
-    transform: rotate(360deg);
+
+  .scoreboard {
+    margin: 8vh 0 4vh 0;
+  }
+
+  .scoreboard h4 {
+    font-size: 4vw;
+  }
+  .gameboard {
+    height: 50vh;
+    width: 75vw;
   }
 }
