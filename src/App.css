@@ -144,6 +144,8 @@ body {
 
 .gameover h1 {
   color: #fff;
+  font-size: 2vw;
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -161,5 +163,9 @@ body {
   .gameboard {
     height: 50vh;
     width: 75vw;
+  }
+
+  .gameover h1 {
+    font-size: 3vw;
   }
 }
